@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.seahorse.Application",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.32",
+    "runtime-version": "3.34",
     "sdk": "org.gnome.Sdk",
     "command": "seahorse",
     "finish-args": [
@@ -16,9 +16,6 @@
         "--filesystem=~/.gnupg:create",
         /* Secret Service API */
         "--talk-name=org.freedesktop.secrets",
-        /* Needed for dconf to work */
-        "--filesystem=xdg-run/dconf", "--filesystem=~/.config/dconf:ro",
-        "--talk-name=ca.desrt.dconf", "--env=DCONF_USER_CONFIG_DIR=.config/dconf",
         /* Needed for importing,exporting from,to keyservers */
         "--share=network"
     ],
@@ -32,6 +29,7 @@
         "*.la", "*.a"
     ],
     "modules": [
+        "shared-modules/intltool/intltool-0.51.json",
         {
             "name": "avahi",
             "cleanup": [ "/bin/*avahi*", "share/man/man1/*avahi*" ],
@@ -68,17 +66,6 @@
             ]
         },
         {
-            "name": "libsoup",
-            "buildsystem": "meson",
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/libsoup/2.66/libsoup-2.66.1.tar.xz",
-                    "sha256": "4a2cb6c1174540af13661636035992c2b179dfcb39f4d3fa7bee3c7e355c43ff"
-                }
-            ]
-        },
-        {
             "name": "openldap",
             "rm-configure": true,
             "config-opts": [
@@ -111,11 +98,14 @@
         },
         {
             "name": "libpwquality",
+            "config-opts": [
+                "--enable-python-bindings=no"
+            ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/libpwquality/libpwquality/releases/download/libpwquality-1.4.0/libpwquality-1.4.0.tar.bz2",
-                    "sha256": "1de6ff046cf2172d265a2cb6f8da439d894f3e4e8157b056c515515232fade6b"
+                    "url": "https://github.com/libpwquality/libpwquality/releases/download/libpwquality-1.4.2/libpwquality-1.4.2.tar.bz2",
+                    "sha256": "5263e09ee62269c092f790ac159112aed3e66826a795e3afec85fdeac4281c8e"
                 }
             ]
         },
@@ -125,8 +115,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/seahorse/3.32/seahorse-3.32.2.tar.xz",
-                    "sha256": "9de021088fc9233087ef7759d9762d86b8162723f403417bdad29d4feb6f1f35"
+                    "url": "https://download.gnome.org/sources/seahorse/3.34/seahorse-3.34.tar.xz",
+                    "sha256": "5b40e9dc8bca6f52882d6eccc0a97cd61eb56bb054f41ea7e9bd64da32b64e9b"
                 }
             ]
         }
