@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.seahorse.Application",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.34",
+    "runtime-version": "3.36",
     "sdk": "org.gnome.Sdk",
     "command": "seahorse",
     "finish-args": [
@@ -104,13 +104,30 @@
             ]
         },
         {
+            "name": "libhandy",
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Dglade_catalog=disabled",
+                "-Dtests=false",
+                "-Dexamples=false"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://source.puri.sm/Librem5/libhandy.git",
+                    "tag": "v0.0.13",
+                    "commit": "7a193d7692c9c76a1a94f17c4d30b585f77d177c"
+               }
+            ]
+        },
+        {
             "name": "seahorse",
             "buildsystem": "meson",
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/seahorse/3.34/seahorse-3.34.1.tar.xz",
-                    "sha256": "dc7aee688a67b83cb076fae6275861dc6bc1a8ab195105132e8bf9c7a9ff82a5"
+                    "url": "https://download.gnome.org/sources/seahorse/3.36/seahorse-3.36.tar.xz",
+                    "sha256": "992f48ba6b0fffa653a91c7acd2966126e7b21d764d721ff758192dc8c2216db"
                 }
             ]
         }
