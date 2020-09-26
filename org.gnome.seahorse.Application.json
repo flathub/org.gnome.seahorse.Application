@@ -1,11 +1,11 @@
 {
     "app-id": "org.gnome.seahorse.Application",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.36",
+    "runtime-version": "3.38",
     "sdk": "org.gnome.Sdk",
     "command": "seahorse",
     "finish-args": [
-        "--share=ipc", "--socket=x11",
+        "--share=ipc", "--socket=falllback-x11",
         "--socket=wayland",
         "--device=dri",
         "--filesystem=~/.ssh:create",
@@ -44,8 +44,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://avahi.org/download/avahi-0.7.tar.gz",
-                    "sha256": "57a99b5dfe7fdae794e3d1ee7a62973a368e91e414bd0dfa5d84434de5b14804"
+                    "url": "https://github.com/lathiat/avahi/releases/download/v0.8/avahi-0.8.tar.gz",
+                    "sha256": "060309d7a333d38d951bc27598c677af1796934dbd98e1024e7ad8de798fedda"
                 }
             ]
         },
@@ -54,8 +54,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.13.0.tar.bz2",
-                    "sha256": "d4b23e47a9e784a63e029338cce0464a82ce0ae4af852886afda410f9e39c630"
+                    "url": "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.14.0.tar.bz2",
+                    "sha256": "cef1f710a6b0d28f5b44242713ad373702d1466dcbe512eb4e754d7f35cd4307"
                 }
             ]
         },
@@ -74,8 +74,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "http://openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.4.47.tgz",
-                    "sha256": "f54c5877865233d9ada77c60c0f69b3e0bfd8b1b55889504c650047cc305520b"
+                    "url": "https://openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.4.53.tgz",
+                    "sha256": "035860e2fb812f2e294ea3e9914944691e4e4f52521b8945a5aacdcd088d8ae8"
                 },
                 {
                     "type": "script",
@@ -115,8 +115,8 @@
                 {
                     "type": "git",
                     "url": "https://source.puri.sm/Librem5/libhandy.git",
-                    "tag": "v0.0.13",
-                    "commit": "7a193d7692c9c76a1a94f17c4d30b585f77d177c"
+                    "tag": "v0.80.0",
+                    "commit": "b61eefde06040703026f49a0b979588e69f77d3a"
                }
             ]
         },
@@ -126,8 +126,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/seahorse/3.36/seahorse-3.36.tar.xz",
-                    "sha256": "992f48ba6b0fffa653a91c7acd2966126e7b21d764d721ff758192dc8c2216db"
+                    "url": "https://download.gnome.org/sources/seahorse/3.37/seahorse-3.37.2.tar.xz",
+                    "sha256": "7e5a416126030c34ce35866e451dd5dacc7adfb329d5d31027bf5f5062ed462a"
                 }
             ]
         }
