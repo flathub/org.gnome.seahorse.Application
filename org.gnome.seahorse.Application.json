@@ -50,6 +50,7 @@
                 "--disable-mono",
                 "--disable-qt3",
                 "--disable-qt4",
+                "--disable-qt5",
                 "--disable-python",
                 "--disable-gtk",
                 "--disable-gtk3"
