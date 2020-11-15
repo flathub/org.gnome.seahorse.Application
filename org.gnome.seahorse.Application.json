@@ -1,11 +1,11 @@
 {
     "app-id": "org.gnome.seahorse.Application",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.36",
+    "runtime-version": "3.38",
     "sdk": "org.gnome.Sdk",
     "command": "seahorse",
     "finish-args": [
-        "--share=ipc", "--socket=x11",
+        "--share=ipc", "--socket=fallback-x11",
         "--socket=wayland",
         "--device=dri",
         "--filesystem=~/.ssh:create",
@@ -25,6 +25,19 @@
     "modules": [
         "shared-modules/intltool/intltool-0.51.json",
         {
+            "name": "libevent",
+            "cleanup": [
+              "/bin"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz",
+                    "sha256": "92e6de1be9ec176428fd2367677e61ceffc2ee1cb119035037a27d346b0403bb"
+                }
+            ]
+        },
+        {
             "name": "avahi",
             "cleanup": [ "/bin/*avahi*", "share/man/man1/*avahi*" ],
             "config-opts": [
@@ -37,6 +50,7 @@
                 "--disable-mono",
                 "--disable-qt3",
                 "--disable-qt4",
+                "--disable-qt5",
                 "--disable-python",
                 "--disable-gtk",
                 "--disable-gtk3"
@@ -44,8 +58,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://avahi.org/download/avahi-0.7.tar.gz",
-                    "sha256": "57a99b5dfe7fdae794e3d1ee7a62973a368e91e414bd0dfa5d84434de5b14804"
+                    "url": "https://github.com/lathiat/avahi/releases/download/v0.8/avahi-0.8.tar.gz",
+                    "sha256": "060309d7a333d38d951bc27598c677af1796934dbd98e1024e7ad8de798fedda"
                 }
             ]
         },
@@ -54,8 +68,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.13.0.tar.bz2",
-                    "sha256": "d4b23e47a9e784a63e029338cce0464a82ce0ae4af852886afda410f9e39c630"
+                    "url": "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.15.0.tar.bz2",
+                    "sha256": "0b472bc12c7d455906c8a539ec56da0a6480ef1c3a87aa5b74d7125df68d0e5b"
                 }
             ]
         },
@@ -74,8 +88,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "http://openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.4.47.tgz",
-                    "sha256": "f54c5877865233d9ada77c60c0f69b3e0bfd8b1b55889504c650047cc305520b"
+                    "url": "https://openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.4.56.tgz",
+                    "sha256": "25520e0363c93f3bcb89802a4aa3db33046206039436e0c7c9262db5a61115e0"
                 },
                 {
                     "type": "script",
@@ -98,8 +112,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/libpwquality/libpwquality/releases/download/libpwquality-1.4.2/libpwquality-1.4.2.tar.bz2",
-                    "sha256": "5263e09ee62269c092f790ac159112aed3e66826a795e3afec85fdeac4281c8e"
+                    "url": "https://github.com/libpwquality/libpwquality/releases/download/libpwquality-1.4.4/libpwquality-1.4.4.tar.bz2",
+                    "sha256": "d43baf23dc6887fe8f8e9b75cabaabc5f4bbbaa0f9eff44278d276141752a545"
                 }
             ]
         },
@@ -114,9 +128,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://source.puri.sm/Librem5/libhandy.git",
-                    "tag": "v0.0.13",
-                    "commit": "7a193d7692c9c76a1a94f17c4d30b585f77d177c"
+                    "url": "https://gitlab.gnome.org/GNOME/libhandy.git",
+                    "tag": "1.0.2",
+                    "commit": "465c00f8f80c27330be494ed7c0ba2ffe26321c4"
                }
             ]
         },
@@ -126,8 +140,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/seahorse/3.36/seahorse-3.36.tar.xz",
-                    "sha256": "992f48ba6b0fffa653a91c7acd2966126e7b21d764d721ff758192dc8c2216db"
+                    "url": "https://download.gnome.org/sources/seahorse/3.38/seahorse-3.38.0.1.tar.xz",
+                    "sha256": "c745dd1de6e1a20f19a2b07a438b8ef7cca235a6aa73410db7f137b021e9b2a2"
                 }
             ]
         }
