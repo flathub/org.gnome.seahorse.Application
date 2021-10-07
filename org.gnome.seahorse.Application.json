@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.seahorse.Application",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "40",
+    "runtime-version": "41",
     "sdk": "org.gnome.Sdk",
     "command": "seahorse",
     "finish-args": [
@@ -23,20 +23,6 @@
         "*.la", "*.a"
     ],
     "modules": [
-        "shared-modules/intltool/intltool-0.51.json",
-        {
-            "name": "libevent",
-            "cleanup": [
-              "/bin"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz",
-                    "sha256": "92e6de1be9ec176428fd2367677e61ceffc2ee1cb119035037a27d346b0403bb"
-                }
-            ]
-        },
         {
             "name": "avahi",
             "cleanup": [ "/bin/*avahi*", "share/man/man1/*avahi*" ],
@@ -45,6 +31,7 @@
                 "--enable-gobject",
                 "--with-xml=expat",
                 "--disable-libdaemon",
+                "--disable-libevent",
                 "--disable-core-docs",
                 "--disable-manpages",
                 "--disable-mono",
@@ -58,7 +45,7 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/lathiat/avahi/releases/download/v0.8/avahi-0.8.tar.gz",
+                    "url": "https://avahi.org/download/avahi-0.8.tar.gz",
                     "sha256": "060309d7a333d38d951bc27598c677af1796934dbd98e1024e7ad8de798fedda"
                 }
             ]
@@ -68,14 +55,13 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.15.0.tar.bz2",
-                    "sha256": "0b472bc12c7d455906c8a539ec56da0a6480ef1c3a87aa5b74d7125df68d0e5b"
+                    "url": "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.16.0.tar.bz2",
+                    "sha256": "6c8cc4aedb10d5d4c905894ba1d850544619ee765606ac43df7405865de29ed0"
                 }
             ]
         },
         {
             "name": "openldap",
-            "rm-configure": true,
             "config-opts": [
                 "--disable-backends",
                 "--disable-overlays",
@@ -88,19 +74,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.4.56.tgz",
-                    "sha256": "25520e0363c93f3bcb89802a4aa3db33046206039436e0c7c9262db5a61115e0"
-                },
-                {
-                    "type": "script",
-                    "dest-filename": "autogen.sh",
-                    "commands": [
-                        "AUTOMAKE=\"/bin/true\" autoreconf -vfi"
-                    ]
-                },
-                {
-                    "type": "shell",
-                    "commands": [ "cp -p /usr/share/automake-*/config.{sub,guess} ." ]
+                    "url": "https://openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.5.7.tgz",
+                    "sha256": "ea9757001bc36295037f0030ede16810a1bb7438bbe8f871a35cc2a2b439d9ab"
                 }
             ]
         },
@@ -123,8 +98,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/seahorse/40/seahorse-40.0.tar.xz",
-                    "sha256": "7ec7057b3868bac6ea041fda82140a39f5ec9e5b188b450914d453bc2d55d02c"
+                    "url": "https://download.gnome.org/sources/seahorse/41/seahorse-41.0.tar.xz",
+                    "sha256": "e6eec09e810448295f547f18c1d5772b65c3edc1d9e5a2595f10b5dde68929f5"
                 }
             ]
         }
