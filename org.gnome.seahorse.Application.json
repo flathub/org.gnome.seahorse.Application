@@ -98,8 +98,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/seahorse/40/seahorse-41.0.tar.xz",
-                    "sha256": "7515bf959b73b956ceb967351c7e299cbb3668a53d35f9c770eb72e00d93ced6"
+                    "url": "https://download.gnome.org/sources/seahorse/41/seahorse-41.0.tar.xz",
+                    "sha256": "e6eec09e810448295f547f18c1d5772b65c3edc1d9e5a2595f10b5dde68929f5"
                 }
             ]
         }
