@@ -100,6 +100,10 @@
                     "type": "archive",
                     "url": "https://download.gnome.org/sources/seahorse/42/seahorse-42.0.tar.xz",
                     "sha256": "c50cacebf8de7a7e2e5f1dae0b98232114741296abe8d543e3923d62a153d630"
+                },
+                {
+                    "type":"patch",
+                    "path":"0001-Fix-screenshot-location.patch"
                 }
             ]
         }
