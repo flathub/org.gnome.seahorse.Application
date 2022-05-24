@@ -55,8 +55,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.16.0.tar.bz2",
-                    "sha256": "6c8cc4aedb10d5d4c905894ba1d850544619ee765606ac43df7405865de29ed0"
+                    "url": "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.17.1.tar.bz2",
+                    "sha256": "711eabf5dd661b9b04be9edc9ace2a7bc031f6bd9d37a768d02d0efdef108f5f"
                 }
             ]
         },
@@ -74,8 +74,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.5.7.tgz",
-                    "sha256": "ea9757001bc36295037f0030ede16810a1bb7438bbe8f871a35cc2a2b439d9ab"
+                    "url": "https://openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.2.tgz",
+                    "sha256": "81d09345232eb62486ecf5acacd2c56c0c45b4a6c8c066612e7f421a23a1cf87"
                 }
             ]
         },
@@ -98,8 +98,12 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/seahorse/41/seahorse-41.0.tar.xz",
-                    "sha256": "e6eec09e810448295f547f18c1d5772b65c3edc1d9e5a2595f10b5dde68929f5"
+                    "url": "https://download.gnome.org/sources/seahorse/42/seahorse-42.0.tar.xz",
+                    "sha256": "c50cacebf8de7a7e2e5f1dae0b98232114741296abe8d543e3923d62a153d630"
+                },
+                {
+                    "type":"patch",
+                    "path":"0001-Fix-screenshot-location.patch"
                 }
             ]
         }
