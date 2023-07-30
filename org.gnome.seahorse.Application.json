@@ -10,7 +10,7 @@
         "--device=dri",
         "--filesystem=~/.ssh:create",
         "--filesystem=~/.gnupg:create",
-        "--filesystem=xdg-pictures",
+        "--filesystem=xdg-pictures:ro",
         "--talk-name=org.freedesktop.secrets",
         "--share=network"
     ],
