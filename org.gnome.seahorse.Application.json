@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.seahorse.Application",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "43",
+    "runtime-version": "45",
     "sdk": "org.gnome.Sdk",
     "command": "seahorse",
     "finish-args": [
@@ -51,16 +51,6 @@
             ]
         },
         {
-            "name": "gpgme",
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.18.0.tar.bz2",
-                    "sha256": "361d4eae47ce925dba0ea569af40e7b52c645c4ae2e65e5621bf1b6cdd8b0e9e"
-                }
-            ]
-        },
-        {
             "name": "openldap",
             "config-opts": [
                 "--disable-backends",
@@ -80,19 +70,6 @@
             ]
         },
         {
-            "name": "libpwquality",
-            "config-opts": [
-                "--enable-python-bindings=no"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://github.com/libpwquality/libpwquality/releases/download/libpwquality-1.4.5/libpwquality-1.4.5.tar.bz2",
-                    "sha256": "6fcf18b75d305d99d04d2e42982ed5b787a081af2842220ed63287a2d6a10988"
-                }
-            ]
-        },
-        {
             "name": "seahorse",
             "buildsystem": "meson",
             "sources": [
@@ -100,6 +77,10 @@
                     "type": "archive",
                     "url": "https://download.gnome.org/sources/seahorse/43/seahorse-43.0.tar.xz",
                     "sha256": "5b1d1bfba74f3658227f3c82e296f330dd0fcd1ef4636b6a218228fee5ea832d"
+                },
+                {
+                    "type": "patch",
+                    "path": "build-gpg2.4.patch"
                 }
             ]
         }
