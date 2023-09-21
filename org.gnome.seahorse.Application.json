@@ -100,6 +100,10 @@
                     "type": "archive",
                     "url": "https://download.gnome.org/sources/seahorse/43/seahorse-43.0.tar.xz",
                     "sha256": "5b1d1bfba74f3658227f3c82e296f330dd0fcd1ef4636b6a218228fee5ea832d"
+                },
+                {
+                    "type": "patch",
+                    "path": "build-gpg2.4.patch"
                 }
             ]
         }
