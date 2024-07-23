@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.seahorse.Application",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "45",
+    "runtime-version": "46",
     "sdk": "org.gnome.Sdk",
     "command": "seahorse",
     "finish-args": [
@@ -66,6 +66,19 @@
                     "type": "archive",
                     "url": "https://openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.4.tgz",
                     "sha256": "d51704e50178430c06cf3d8aa174da66badf559747a47d920bb54b2d4aa40991"
+                }
+            ]
+        },
+        {
+            "name": "libpwquality",
+            "config-opts": [
+                "--enable-python-bindings=no"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/libpwquality/libpwquality/releases/download/libpwquality-1.4.5/libpwquality-1.4.5.tar.bz2",
+                    "sha256": "6fcf18b75d305d99d04d2e42982ed5b787a081af2842220ed63287a2d6a10988"
                 }
             ]
         },
