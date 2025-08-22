@@ -1,11 +1,12 @@
 {
     "app-id": "org.gnome.seahorse.Application",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "47",
+    "runtime-version": "49",
     "sdk": "org.gnome.Sdk",
     "command": "seahorse",
     "finish-args": [
-        "--share=ipc", "--socket=fallback-x11",
+        "--share=ipc",
+        "--socket=fallback-x11",
         "--socket=wayland",
         "--device=dri",
         "--filesystem=~/.ssh:create",
@@ -17,12 +18,15 @@
     ],
     "cleanup": [
         "/include",
-        "/lib/pkgconfig", "/share/pkgconfig",
+        "/lib/pkgconfig",
+        "/share/pkgconfig",
         "/share/aclocal",
-        "/man", "/share/man",
+        "/man",
+        "/share/man",
         "/share/gtk-doc",
         "/share/vala",
-        "*.la", "*.a"
+        "*.la",
+        "*.a"
     ],
     "modules": [
         {
@@ -39,8 +43,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.8.tgz",
-                    "sha256": "48969323e94e3be3b03c6a132942dcba7ef8d545f2ad35401709019f696c3c4e"
+                    "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.10.tgz",
+                    "sha256": "c065f04aad42737aebd60b2fe4939704ac844266bc0aeaa1609f0cad987be516"
                 }
             ]
         },
